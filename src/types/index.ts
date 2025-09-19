@@ -14,10 +14,13 @@ export type CartItem = Product & {
     quantity: number
 }
 
-// export type CartItem = Pick<Product, 'id' | 'name' | 'price' > & {
-//     quantity: number
-// }
-// export type CartItem = Omit<Product, 'id' | 'name' | 'price' > & {
-//     quantity: number
-// }
+export type Size = {
+    id: string
+    name: string
+}
 
+export type SizeFilter = 'xs' | 'ch' | 'md' | 'g' | '';
+
+export type Filter = {
+    size: string | null
+}

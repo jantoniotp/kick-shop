@@ -109,7 +109,7 @@ export const db : Product[] = [
         ch: true,
         md: false,
         g: false,
-        price: 580
+        price: 600
     },
     {
         id: 11,
@@ -131,7 +131,7 @@ export const db : Product[] = [
         ch: true,
         md: true,
         g: false,
-        price: 530
+        price: 550
     },
     {
         id: 13,
@@ -143,5 +143,16 @@ export const db : Product[] = [
         md: false,
         g: true,
         price: 490
+    },
+    {
+        id: 14,
+        name: 'Chamarra Blanca HPC POLO',
+        image: 'chamarra_14',
+        description: 'Chamarra Abrigo Blanca para Hombre HPC Polo – Estilo Puffer , Manga Larga, Básica, Casual',
+        xs: false,
+        ch: false,
+        md: true,
+        g: false,
+        price: 400
     },
   ]
