@@ -91,17 +91,6 @@ export const db : Product[] = [
     },
     {
         id: 9,
-        name: 'Chamarra Negra con Mangas Blancas',
-        image: 'chamarra_09',
-        description: 'Corte del bajo: Cintura elástica, Estilo: Universitario informal, Escote: Cuello Béisbol',
-        xs: false,
-        ch: true,
-        md: false,
-        g: false,
-        price: 500
-    },
-    {
-        id: 10,
         name: 'Chamarra Gris',
         image: 'chamarra_10',
         description: 'Abrigo acolchado para hombre de otoño e invierno, abrigo forrado térmicamente para salir de forma casual',
@@ -112,29 +101,29 @@ export const db : Product[] = [
         price: 600
     },
     {
-        id: 11,
+        id: 10,
         name: 'Chamarra Azul Acolchonada',
         image: 'chamarra_11',
         description: 'Abrigo de invierno acolchado, de cuello alto, con cremallera y sólido, de estilo casual y holgado para hombres',
         xs: false,
-        ch: true,
+        ch: false,
         md: true,
         g: false,
         price: 750
     },
     {
-        id: 12,
+        id: 11,
         name: 'Chamarra Caqui',
         image: 'chamarra_12',
         description: 'Cazadora con bolsillo con solapa con cremallera, cuello alzado, forrado, 100% Poliéster',
         xs: false,
-        ch: true,
+        ch: false,
         md: true,
         g: false,
         price: 550
     },
     {
-        id: 13,
+        id: 12,
         name: 'Chamarra con Letras',
         image: 'chamarra_13',
         description: 'Chamarra de bombardero con bordado de letra, bordado, parches, anilla, cremallera, 100% Poliéster',
@@ -145,7 +134,7 @@ export const db : Product[] = [
         price: 490
     },
     {
-        id: 14,
+        id: 13,
         name: 'Chamarra Blanca HPC POLO',
         image: 'chamarra_14',
         description: 'Chamarra Abrigo Blanca para Hombre HPC Polo – Estilo Puffer , Manga Larga, Básica, Casual',
