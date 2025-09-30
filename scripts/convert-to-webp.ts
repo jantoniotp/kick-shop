@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-const inputFolder = './public/img';
+const inputFolder = './public/img-convert';
 const outputFolder = './public/images-webp';
 
 if (!fs.existsSync(outputFolder)) {
@@ -11,7 +11,7 @@ if (!fs.existsSync(outputFolder)) {
 
 fs.readdirSync(inputFolder).forEach((file) => {
   const ext = path.extname(file).toLowerCase();
-  if (ext === '.jpg' || ext === '.jpeg') {
+  if (ext === '.jpg' || ext === '.jpeg' || ext === '.png') {
     const inputPath = path.join(inputFolder, file);
     const outputPath = path.join(outputFolder, `${path.basename(file, ext)}.webp`);
 

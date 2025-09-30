@@ -3,8 +3,7 @@ import Product from "./components/Product"
 import Header from "./components/Header"
 import { cartReducer, initialState } from "./reducers/cart-reducer"
 import { Filter } from "./components/Filter"
-import { useCatalogStore } from "./store";
-import { db as products } from './data/db';
+import { useProducts } from "./hooks/useProducts"
 
 function App() {
 
@@ -14,12 +13,9 @@ function App() {
       localStorage.setItem('cart', JSON.stringify(state.cart))
   }, [state.cart])
 
-  //const products = useCatalogStore((state) => state.filteredProducts());
-  const sizeCurrent = useCatalogStore((state) => state.sizeCurrent);
-  console.log(sizeCurrent)
-  const filteredProducts = sizeCurrent
-    ? products.filter((producto) => producto[sizeCurrent])
-    : products;
+
+  const { products, loading } = useProducts();
+  if (loading) return <p>Cargando productos...</p>;
 
   return (
     <>
@@ -34,7 +30,7 @@ function App() {
             <Filter/>
 
             <div className="row mt-5">
-                {filteredProducts.map((product) => (
+                {products.map((product) => (
                     <Product 
                         key={product.id}
                         product={product}
