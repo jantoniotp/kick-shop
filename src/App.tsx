@@ -4,6 +4,8 @@ import Header from "./components/Header"
 import { cartReducer, initialState } from "./reducers/cart-reducer"
 import { Filter } from "./components/Filter"
 import { useProducts } from "./hooks/useProducts"
+import { useCatalogStore } from "./store"
+import { Loader } from "./components/Loader/Loader"
 
 function App() {
 
@@ -15,7 +17,13 @@ function App() {
 
 
   const { products, loading } = useProducts();
-  if (loading) return <p>Cargando productos...</p>;
+  const sizeCurrent = useCatalogStore((state) => state.sizeCurrent);
+
+  if (loading) return <Loader />;
+ 
+  const filteredProducts = sizeCurrent
+    ? products.filter((producto) => producto[sizeCurrent])
+    : products;
 
   return (
     <>
@@ -30,7 +38,7 @@ function App() {
             <Filter/>
 
             <div className="row mt-5">
-                {products.map((product) => (
+                {filteredProducts.map((product) => (
                     <Product 
                         key={product.id}
                         product={product}
