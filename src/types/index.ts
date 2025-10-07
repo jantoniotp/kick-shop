@@ -3,10 +3,6 @@ export type Product = {
     name: string
     image: string
     description: string
-    xs: boolean
-    ch: boolean
-    md: boolean
-    g: boolean
     price: number
 }
 
@@ -18,9 +14,20 @@ export type Size = {
     id: string
     name: string
 }
-
-export type SizeFilter = 'xs' | 'ch' | 'md' | 'g' | '';
+export type Category = Size;
+export type SizeFilter = string;
+export type CategoryType = string;
 
 export type Filter = {
     size: string | null
+}
+
+export type ProductCatalog = Product & {
+  size: string;
+  stock: number;
+}
+
+export type ProductsOptions = {
+  sizeLabel?: string;
+  category?: string;
 }

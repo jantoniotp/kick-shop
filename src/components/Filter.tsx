@@ -1,29 +1,27 @@
-import { sizes } from "../data/sizes"
+import { jacketSizes, heelSizes } from "../data/sizes"
+import { categories } from "../data/categories"
 import { useCatalogStore } from "../store"
-import type { SizeFilter } from "../types";
+import { SelectFilter } from "./SelectFilter";
 
 export const Filter = () => {
 
-    const setSize = useCatalogStore((state) => state.setSize);
+    const { sizeCurrent, categoryCurrent, setSize, setCategory } = useCatalogStore();
+    const sizes = categoryCurrent == '2' ? jacketSizes : heelSizes;
 
     return (
-        <div className="filter-content">
-            <form>
-                <div>
-                    <label htmlFor="size">Filtrar por Talla</label>
-                    <select onChange={(e) => setSize(e.target.value as SizeFilter)}>
-                        <option value="">-- Todas las Tallas</option>
-                        {sizes.map(size => (
-                            <option 
-                                value={size.id}
-                                key={size.id}
-                            >
-                                {size.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-            </form>
-        </div>
+        <form className="filter-container">
+            <SelectFilter
+            label="Categoria"
+            options={categories}
+            value={categoryCurrent}
+            onChange={setCategory}
+            />
+            <SelectFilter
+                label="Talla"
+                options={sizes}
+                value={sizeCurrent}
+                onChange={setSize}
+            />
+        </form>
     )
 }

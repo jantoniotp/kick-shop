@@ -1,24 +1,19 @@
 import { create } from 'zustand';
-//import { db as products } from './data/db';
-import type { SizeFilter } from './types';
+import type { SizeFilter, CategoryType } from './types';
 
 type StoreState = {
   sizeCurrent: SizeFilter;
+  categoryCurrent: CategoryType;
   setSize: (size: SizeFilter) => void;
-  //filteredProducts: () => typeof products;
+  setCategory: (type: CategoryType) => void;
 }
-
-/*export const useCatalogStore = create<StoreState>((set, get) => ({
-  sizeCurrent: '',
-  setSize: (size) => set({ sizeCurrent: size }),
-  filteredProducts: () => {
-    const size = get().sizeCurrent;
-    if (!size) return products;
-    return products.filter((producto) => producto[size]);
-  },
-}));*/
 
 export const useCatalogStore = create<StoreState>((set) => ({
   sizeCurrent: '',
+  categoryCurrent: '1',
   setSize: (size) => set({ sizeCurrent: size }),
+  setCategory: (type) => set({
+     categoryCurrent: type,
+     sizeCurrent: ''
+    }),
 }));

@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
 import { fetchProducts } from '../api/products';
-import type { Product } from '../types'
+import type { Product, ProductsOptions } from '../types'
 
-export function useProducts() {
+export function useProducts(options: ProductsOptions) {
+  const { sizeLabel, category } = options;
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchProducts().then((data) => {
+    fetchProducts(options).then((data) => {
       setProducts(data);
       setLoading(false);
     });
-  }, []);
+  }, [sizeLabel, category]);
 
   return { products, loading };
 }
