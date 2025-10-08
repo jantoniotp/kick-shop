@@ -16,14 +16,10 @@ function App() {
   }, [state.cart])
 
 
-  const { products, loading } = useProducts();
-  const sizeCurrent = useCatalogStore((state) => state.sizeCurrent);
+  const { sizeCurrent, categoryCurrent } = useCatalogStore();
+  const { products, loading } = useProducts({sizeLabel: sizeCurrent, category: categoryCurrent});
 
   if (loading) return <Loader />;
- 
-  const filteredProducts = sizeCurrent
-    ? products.filter((producto) => producto[sizeCurrent])
-    : products;
 
   return (
     <>
@@ -38,7 +34,7 @@ function App() {
             <Filter/>
 
             <div className="row mt-5">
-                {filteredProducts.map((product) => (
+                {products.map((product) => (
                     <Product 
                         key={product.id}
                         product={product}

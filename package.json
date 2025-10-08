@@ -1,5 +1,5 @@
 {
-  "name": "guitarla-ts",
+  "name": "kick-shop",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.58.0",
+    "lodash.groupby": "^4.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.34.4",
     "zustand": "^5.0.8"
   },
   "devDependencies": {
+    "@types/lodash.groupby": "^4.6.9",
     "@types/node": "^24.5.2",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
