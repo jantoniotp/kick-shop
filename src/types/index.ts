@@ -23,11 +23,21 @@ export type Filter = {
 }
 
 export type ProductCatalog = Product & {
-  size: string;
-  stock: number;
+  sizes: {
+    name: string;
+    stock: number;
+  }[];
 }
 
 export type ProductsOptions = {
   sizeLabel?: string;
   category?: string;
 }
+
+export type ProductSizeRow = {
+  stock: number;
+  products: Product;
+  sizes: {
+    name: string;
+  };
+};
