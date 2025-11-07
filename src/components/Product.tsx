@@ -9,7 +9,7 @@ type ProductProps = {
 
 export default function Product({product, dispatch} : ProductProps) {
 
-    const { name, image, description, price } = product
+    const { name, image, description, price, sizes } = product
 
     return (
         <div className="col-12 col-md-6 col-lg-4 my-4 product-card">
@@ -22,6 +22,20 @@ export default function Product({product, dispatch} : ProductProps) {
                 <div className="col-12 col-md-8 ps-md-3">
                     <h3 className="text-black fs-4 fw-bold text-uppercase title-product">{name}</h3>
                     <p>{description}</p>
+                    
+                <div className="sizes mb-2">
+                    <strong>Tallas disponibles:</strong>
+                    <ul style={{ paddingLeft: '1rem', marginBottom: '0.5rem', marginTop: '0.25rem' }}>
+                    {[...sizes]
+                        .sort((a, b) => Number(a.name) - Number(b.name))
+                        .map((size, index) => (
+                        <li key={index}>
+                            Talla {size.name} — Stock: {size.stock}
+                        </li>
+                        ))}
+                    </ul>
+                </div>
+
                     <p className="fw-black text-primary fs-3">${price}</p>
                     <button 
                         type="button"
