@@ -780,11 +780,6 @@ button:not(:disabled),
   overflow: hidden;
 }
 
-.description {
-  min-height: 100px;
-  overflow: hidden;
-}
-
 /* Loader */
 .sk-circle {
   margin: 100px auto;
@@ -960,4 +955,28 @@ button:not(:disabled),
     flex-direction: column;
     min-width: 200px;
   }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* separación entre imagen y texto */
+}
+
+@media (min-width: 768px) {
+  .product-card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.container-center-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image {
+  max-width: 300px;
+  height: auto;
 }
