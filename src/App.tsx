@@ -29,7 +29,7 @@ function App() {
       />
       
       <main className="container-xl mt-5">
-           <h2 className="text-center">Chamarras para Caballero</h2>
+            <h2 className="text-center">Chamarras para Caballero</h2>
 
             <Filter/>
 
