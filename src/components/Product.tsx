@@ -8,7 +8,7 @@ type ProductProps = {
     dispatch: Dispatch<CartActions>
 }
 
-export default function Product({product, dispatch} : ProductProps) {
+export default function Product({product/*, dispatch*/} : ProductProps) {
 
     const { name, image, description, price, sizes } = product
 
