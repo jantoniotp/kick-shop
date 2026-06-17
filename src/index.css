@@ -960,25 +960,52 @@ button:not(:disabled),
 .product-card {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* separación entre imagen y texto */
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-@media (min-width: 768px) {
-  .product-card {
-    flex-direction: row;
-    align-items: center;
-  }
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
 }
 
-.container-center-img {
+.product-card__image {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #f8f9fa;
+  padding: 1rem;
+  height: 280px;
 }
 
 .product-image {
-  max-width: 300px;
-  height: auto;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.product-card__body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-card__desc {
+  font-size: 0.9rem;
+  color: #555;
+  flex: 1;
+}
+
+.product-card__footer {
+  text-align: center;
+  margin-top: auto;
+  padding-top: 0.5rem;
 }
 
 /* Estilos para el boton de WhatsApp */
